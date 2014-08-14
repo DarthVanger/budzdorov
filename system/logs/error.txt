@@ -1,0 +1,8 @@
+2014-08-14 22:55:48 - PHP Warning:  imagecreatetruecolor() expects parameter 2 to be long, string given in /var/www/opencart/system/library/image.php on line 86
+2014-08-14 22:55:48 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, null given in /var/www/opencart/system/library/image.php on line 94
+2014-08-14 22:55:48 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, null given in /var/www/opencart/system/library/image.php on line 97
+2014-08-14 22:55:48 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, null given in /var/www/opencart/system/library/image.php on line 99
+2014-08-14 22:56:10 - PHP Warning:  imagecreatetruecolor() expects parameter 2 to be long, string given in /var/www/opencart/system/library/image.php on line 86
+2014-08-14 22:56:10 - PHP Warning:  imagecolorallocate() expects parameter 1 to be resource, null given in /var/www/opencart/system/library/image.php on line 94
+2014-08-14 22:56:10 - PHP Warning:  imagefilledrectangle() expects parameter 1 to be resource, null given in /var/www/opencart/system/library/image.php on line 97
+2014-08-14 22:56:10 - PHP Warning:  imagecopyresampled() expects parameter 1 to be resource, null given in /var/www/opencart/system/library/image.php on line 99
