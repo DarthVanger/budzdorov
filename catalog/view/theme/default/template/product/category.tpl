@@ -5,17 +5,6 @@
     <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
     <?php } ?>
   </div>
-  <h1><?php echo $heading_title; ?></h1>
-  <?php if ($thumb || $description) { ?>
-  <div class="category-info">
-    <?php if ($thumb) { ?>
-    <div class="image"><img src="<?php echo $thumb; ?>" alt="<?php echo $heading_title; ?>" /></div>
-    <?php } ?>
-    <?php if ($description) { ?>
-    <?php echo $description; ?>
-    <?php } ?>
-  </div>
-  <?php } ?>
   <?php if ($categories) { ?>
   <h2><?php echo $text_refine; ?></h2>
   <div class="category-list">
@@ -66,18 +55,19 @@
     </div>
   </div>
   <div class="product-compare"><a href="<?php echo $compare; ?>" id="compare-total"><?php echo $text_compare; ?></a></div>
+  <h1 class="text-center"><?php echo $heading_title; ?></h1>
   <div class="product-list">
     <?php foreach ($products as $product) { ?>
     <div>
+      <div class="name"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>
       <?php if ($product['thumb']) { ?>
       <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" title="<?php echo $product['name']; ?>" alt="<?php echo $product['name']; ?>" /></a></div>
       <?php } ?>
-      <div class="name"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></div>
       <div class="description"><?php echo $product['description']; ?></div>
       <?php if ($product['price']) { ?>
       <div class="price">
         <?php if (!$product['special']) { ?>
-        <?php echo $product['price']; ?>
+        <?php echo $product['price']; ?> грн
         <?php } else { ?>
         <span class="price-old"><?php echo $product['price']; ?></span> <span class="price-new"><?php echo $product['special']; ?></span>
         <?php } ?>
@@ -90,13 +80,28 @@
       <?php if ($product['rating']) { ?>
       <div class="rating"><img src="catalog/view/theme/default/image/stars-<?php echo $product['rating']; ?>.png" alt="<?php echo $product['reviews']; ?>" /></div>
       <?php } ?>
-      <div class="cart">
-        <input type="button" value="<?php echo $button_cart; ?>" onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button" />
-      </div>
-      <div class="wishlist"><a onclick="addToWishList('<?php echo $product['product_id']; ?>');"><?php echo $button_wishlist; ?></a></div>
-      <div class="compare"><a onclick="addToCompare('<?php echo $product['product_id']; ?>');"><?php echo $button_compare; ?></a></div>
-    </div>
+          <div class="cart">
+            <input type="button" value="<?php echo $button_cart; ?>" onclick="addToCart('<?php echo $product['product_id']; ?>');" class="button" />
+          </div>
+          <div class="wishlist"><a onclick="addToWishList('<?php echo $product['product_id']; ?>');"><?php echo $button_wishlist; ?></a></div>
+          <div class="compare"><a onclick="addToCompare('<?php echo $product['product_id']; ?>');"><?php echo $button_compare; ?></a></div>
+        </div>
     <?php } ?>
+  </div>
+  <div class="category-description">
+      <?php if ($thumb || $description) { ?>
+      <div class="category-info">
+        <?php if ($thumb) { ?>
+        <!-- <div class="image"><img src="<?php echo $thumb; ?>" alt="<?php echo $heading_title; ?>" /></div> -->
+        <?php } ?>
+        <?php if ($description) { ?>
+        <?php echo $description; ?>
+        <?php if (isset($blogLink)) { ?>
+            <?php echo $blogLink; ?>
+        <?php } ?>
+        <?php } ?>
+      </div>
+      <?php } ?>
   </div>
   <div class="pagination"><?php echo $pagination; ?></div>
   <?php } ?>
@@ -120,7 +125,7 @@ function display(view) {
 			html += '</div>';			
 			
 			html += '<div class="left">';
-			
+
 			var image = $(element).find('.image').html();
 			
 			if (image != null) { 
@@ -158,11 +163,12 @@ function display(view) {
 			
 			var image = $(element).find('.image').html();
 			
+			html += '<div class="name">' + $(element).find('.name').html() + '</div>';
+
 			if (image != null) {
 				html += '<div class="image">' + image + '</div>';
 			}
 			
-			html += '<div class="name">' + $(element).find('.name').html() + '</div>';
 			html += '<div class="description">' + $(element).find('.description').html() + '</div>';
 			
 			var price = $(element).find('.price').html();
@@ -195,7 +201,7 @@ view = $.totalStorage('display');
 if (view) {
 	display(view);
 } else {
-	display('list');
+	display('grid');
 }
 //--></script> 
 <?php echo $footer; ?>
