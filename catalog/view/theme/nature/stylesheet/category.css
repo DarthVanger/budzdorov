@@ -1,0 +1,15 @@
+.category-title {
+  background: url('../image/line3.png') 0px 15px repeat-x;
+  line-height: 1.5em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+.category-title h2 {
+  display: inline-block;
+  padding: 5px 5px 9px 5px;
+  background-color: #ededed;
+  font-weight: normal;
+  font-style: italic;
+  color: #aaa;
+  font-family: "Noto Serif";
+}

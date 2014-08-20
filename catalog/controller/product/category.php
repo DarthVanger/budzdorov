@@ -151,6 +151,11 @@ class ControllerProductCategory extends Controller {
 			}
 
 			$this->data['description'] = html_entity_decode($category_info['description'], ENT_QUOTES, 'UTF-8');
+
+            // get blog link
+            $this->load->model('module/blog');
+            $this->data['blogLink'] = $this->model_module_blog->getPostLinkByTitle($category_info['name']);
+
 			$this->data['compare'] = $this->url->link('product/compare');
 
 			$url = '';
@@ -184,8 +189,11 @@ class ControllerProductCategory extends Controller {
 				$product_total = $this->model_catalog_product->getTotalProducts($data);				
 
 				$this->data['categories'][] = array(
-					'name'  => $result['name'] . ($this->config->get('config_product_count') ? ' (' . $product_total . ')' : ''),
-					'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $result['category_id'] . $url)
+					'name'  => $result['name'],
+                    'product_total' => $product_total,
+					'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $result['category_id'] . $url),
+                    'image' => $result['image']
+                
 				);
 			}
 

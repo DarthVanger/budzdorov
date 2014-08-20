@@ -91,6 +91,11 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
       <?php } ?>
     </li>
     <?php } ?>
+
+    <!-- custom links -->
+    <li><a href="<?=$base?>index.php?route=module/blog">Blog</a></li>
+    <!-- ------------ -->
+
   </ul>
 </div>
 <?php } ?>
