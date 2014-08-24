@@ -255,7 +255,12 @@
     <a href="#tab-related"><?php echo $tab_related; ?> (<?php echo count($products); ?>)</a>
     <?php } ?>
   </div>
-  <div id="tab-description" class="tab-content"><?php echo $description; ?></div>
+  <div id="tab-description" class="tab-content">
+    <?php echo $description; ?>
+    <?php if (isset($blogLink)) { ?>
+        <?php echo $blogLink; ?>
+    <?php } ?>
+  </div>
   <?php if ($attribute_groups) { ?>
   <div id="tab-attribute" class="tab-content">
     <table class="attribute">
