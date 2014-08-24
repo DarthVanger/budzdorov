@@ -82,7 +82,7 @@ class ModelModuleBlog extends Model {
       $blog_id = $this->getIdByTitle($postTitle);
       if ($blog_id) {
           $linkName = 'Читать статьи о пользе и инструкции по применению';
-          return '<a target="_blank" href="index.php?route=module/blog/view&blog_id='.$blog_id.'">'.$linkName.'</a>';
+          return '<a class="blog-link" target="_blank" href="index.php?route=module/blog/view&blog_id='.$blog_id.'">'.$linkName.'</a>';
       } else {
           return null;
       }

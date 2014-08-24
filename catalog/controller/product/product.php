@@ -396,6 +396,10 @@ class ControllerProductProduct extends Controller {
 			$this->data['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
 			$this->data['attribute_groups'] = $this->model_catalog_product->getProductAttributes($this->request->get['product_id']);
 
+            // get blog link
+            $this->load->model('module/blog');
+            $this->data['blogLink'] = $this->model_module_blog->getPostLinkByTitle($category_info['name']);
+
 			$this->data['products'] = array();
 
 			$results = $this->model_catalog_product->getProductRelated($this->request->get['product_id']);
