@@ -48,6 +48,31 @@ class ControllerModuleFeatured extends Controller {
 				} else {
 					$rating = false;
 				}
+
+      /**
+       * get product's category chain to generate the path parameter for url
+       * @author darthvanger@gmail.com
+       */
+       // get product's category
+       $path_param = '';
+       $categories = $this->model_catalog_product->getCategories($product_info['product_id']);
+       if ($categories) {
+           $category = $this->model_catalog_category->getCategory($categories[0]['category_id']);
+           $category_ids_chain = [];
+           // get all the parent categories
+           while ($category) {
+             $category_ids_chain[] = $category['category_id'];
+             $category = $this->model_catalog_category->getCategory($category['parent_id']);
+          }
+          // form the path parameter for url
+          $path_param = '';
+          for ($i = count($category_ids_chain) - 1; $i>=0; $i--) {
+              $path_param .= $category_ids_chain[$i];
+              if ($i != 0) {
+                  $path_param .= '_';
+              }
+          }
+       }
 					
 				$this->data['products'][] = array(
 					'product_id' => $product_info['product_id'],
@@ -57,7 +82,7 @@ class ControllerModuleFeatured extends Controller {
 					'special' 	 => $special,
 					'rating'     => $rating,
 					'reviews'    => sprintf($this->language->get('text_reviews'), (int)$product_info['reviews']),
-					'href'    	 => $this->url->link('product/product', 'product_id=' . $product_info['product_id'])
+					'href'    	 => $this->url->link('product/product', 'path='.$path_param.'&product_id=' . $product_info['product_id'])
 				);
 			}
 		}

@@ -96,3 +96,24 @@
 2014-08-16 20:03:56 - PHP Notice:  Undefined index: thumb in /var/www/opencart/catalog/controller/product/category.php on line 194
 2014-08-16 20:03:56 - PHP Notice:  Undefined index: thumb in /var/www/opencart/catalog/controller/product/category.php on line 194
 2014-08-16 20:03:56 - PHP Notice:  Undefined index: thumb in /var/www/opencart/catalog/controller/product/category.php on line 194
+2014-09-20 17:56:58 - PHP Notice:  Undefined variable: category_info in /var/www/opencart/vqmod/vqcache/vq2-catalog_controller_product_product.php on line 422
+2014-09-20 17:59:53 - PHP Notice:  Undefined variable: category_info in /var/www/opencart/vqmod/vqcache/vq2-catalog_controller_product_product.php on line 422
+2014-09-20 18:02:39 - PHP Notice:  Undefined variable: category_info in /var/www/opencart/vqmod/vqcache/vq2-catalog_controller_product_product.php on line 422
+2014-09-20 18:03:54 - PHP Notice:  Undefined variable: category_info in /var/www/opencart/vqmod/vqcache/vq2-catalog_controller_product_product.php on line 422
+2014-09-20 18:04:11 - PHP Notice:  Undefined variable: category_info in /var/www/opencart/vqmod/vqcache/vq2-catalog_controller_product_product.php on line 422
+2014-09-20 18:04:23 - PHP Notice:  Undefined variable: category_info in /var/www/opencart/vqmod/vqcache/vq2-catalog_controller_product_product.php on line 422
+2014-09-20 18:05:15 - PHP Notice:  Undefined variable: category_info in /var/www/opencart/vqmod/vqcache/vq2-catalog_controller_product_product.php on line 422
+2014-09-20 18:44:31 - PHP Warning:  file_put_contents(/var/www/opencart/vqmod/logs/6_Sat.log): failed to open stream: Permission denied in /var/www/opencart/vqmod/vqmod.php on line 446
+2014-09-20 18:48:22 - PHP Notice:  Undefined variable: category_info in /var/www/opencart/vqmod/vqcache/vq2-catalog_controller_product_product.php on line 422
+2014-09-20 19:06:22 - PHP Notice:  Undefined variable: result in /var/www/opencart/catalog/controller/module/featured.php on line 56
+2014-09-20 19:06:22 - PHP Notice:  Undefined variable: result in /var/www/opencart/catalog/controller/module/featured.php on line 56
+2014-09-20 19:06:22 - PHP Notice:  Undefined variable: result in /var/www/opencart/catalog/controller/module/featured.php on line 56
+2014-09-20 19:06:22 - PHP Notice:  Undefined variable: result in /var/www/opencart/catalog/controller/module/featured.php on line 56
+2014-09-20 19:06:22 - PHP Notice:  Undefined variable: result in /var/www/opencart/catalog/controller/module/featured.php on line 56
+2014-09-20 19:06:22 - PHP Notice:  Undefined variable: result in /var/www/opencart/catalog/controller/module/featured.php on line 56
+2014-09-20 19:06:27 - PHP Notice:  Undefined variable: result in /var/www/opencart/catalog/controller/module/featured.php on line 56
+2014-09-20 19:06:27 - PHP Notice:  Undefined variable: result in /var/www/opencart/catalog/controller/module/featured.php on line 56
+2014-09-20 19:06:27 - PHP Notice:  Undefined variable: result in /var/www/opencart/catalog/controller/module/featured.php on line 56
+2014-09-20 19:06:27 - PHP Notice:  Undefined variable: result in /var/www/opencart/catalog/controller/module/featured.php on line 56
+2014-09-20 19:06:27 - PHP Notice:  Undefined variable: result in /var/www/opencart/catalog/controller/module/featured.php on line 56
+2014-09-20 19:06:27 - PHP Notice:  Undefined variable: result in /var/www/opencart/catalog/controller/module/featured.php on line 56
