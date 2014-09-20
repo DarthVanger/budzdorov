@@ -91,9 +91,7 @@ label {
 }
 #mainsite{
     width: 980px;
-	margin:0;
-	padding:0;
-	background: url('../image/bg-conteiner.png') no-repeat;
+	margin:0; padding:0; background: url('../image/bg-conteiner.png') no-repeat;
 }
 #column-left + #column-right + #content, #column-left + #content {
 	margin-left: 195px;
@@ -115,11 +113,40 @@ label {
 #header #logo {
 	position: absolute;
 	margin:0;
-	top: 0px;
-	left:0px;
+	top: 50px;
+	left: 260px;
 	overflow:hidden;
-	width:240px;
-	height:100px;
+	width: 100px;
+	height: 120px;
+
+  -webkit-animation: treeflyvertical 10s linear infinite;
+}
+/*
+#header #logo:hover {
+  -webkit-animation: treerotate .5s linear infinite;
+}
+*/
+@-webkit-keyframes treerotate {
+  0%  {-webkit-transform: rotate(0deg)}
+  25%  {-webkit-transform: rotate(2deg)}
+  75%  {-webkit-transform: rotate(-2deg)}
+  100%  {-webkit-transform: rotate(0deg)}
+}
+@-webkit-keyframes treeflyvertical {
+    0%  {top: 50px;}
+    20% {top: 50px; }
+    30% {top: 0px; }
+    35% {top: 5px; }
+    40% {top: 0px; }
+    45% {top: 5px; }
+    50% {top: 0px; }
+    55% {top: 5px; }
+    60% {top: 0px; }
+    65% {top: 5px; }
+    70% {top: 0px; }
+    80% {top: 50px; }
+    90% {top: 50px; }
+    100% {top: 50px; }
 }
 #language {
 	position: absolute;
@@ -672,10 +699,20 @@ a.button:hover span {
 	border-bottom: 1px solid #dedede;
 	padding: 10px;
 }
+.box-content .name {
+  max-width: 140px;
+  height: 4em;
+}
 /* box products */
 .box-product {
 	overflow: auto;
 	margin:0 auto 0 auto;
+  text-align: justify;
+}
+.box-product:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
 }
 .box-product > div {
 	width:auto;
