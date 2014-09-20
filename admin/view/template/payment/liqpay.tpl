@@ -1,98 +1,124 @@
-<?php echo $header; ?>
+<?php
+/**
+ * Liqpay Payment Module
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category        Liqpay
+ * @package         Payment
+ * @version         0.0.1
+ * @author          Liqpay
+ * @copyright       Copyright (c) 2014 Liqpay
+ * @license         http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ *
+ * EXTENSION INFORMATION
+ *
+ * OpenCart         1.5.6
+ * LiqPay API       https://www.liqpay.com/ru/doc
+ *
+ */
+?>
+
+<?=$header?>
 <div id="content">
-  <div class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
-    <?php } ?>
-  </div>
-  <?php if ($error_warning) { ?>
-  <div class="warning"><?php echo $error_warning; ?></div>
-  <?php } ?>
-  <div class="box">
-    <div class="heading">
-      <h1><img src="view/image/payment.png" alt="" /> <?php echo $heading_title; ?></h1>
-      <div class="buttons"><a onclick="$('#form').submit();" class="button"><?php echo $button_save; ?></a><a href="<?php echo $cancel; ?>" class="button"><?php echo $button_cancel; ?></a></div>
+    <div class="breadcrumb">
+        <?php foreach ($breadcrumbs as $breadcrumb): ?>
+            <?=$breadcrumb['separator']?><a href="<?=$breadcrumb['href']?>"><?=$breadcrumb['text']?></a>
+        <?php endforeach ?>
     </div>
-    <div class="content">
-      <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form">
-        <table class="form">
-          <tr>
-            <td><span class="required">*</span> <?php echo $entry_merchant; ?></td>
-            <td><input type="text" name="liqpay_merchant" value="<?php echo $liqpay_merchant; ?>" />
-              <?php if ($error_merchant) { ?>
-              <span class="error"><?php echo $error_merchant; ?></span>
-              <?php } ?></td>
-          </tr>
-          <tr>
-            <td><span class="required">*</span> <?php echo $entry_signature; ?></td>
-            <td><input type="text" name="liqpay_signature" value="<?php echo $liqpay_signature; ?>" />
-              <?php if ($error_signature) { ?>
-              <span class="error"><?php echo $error_signature; ?></span>
-              <?php } ?></td>
-          </tr>
-          <tr>
-            <td><?php echo $entry_type; ?></td>
-            <td><select name="liqpay_type">
-                <?php if ($liqpay_type == 'liqpay') { ?>
-                <option value="liqpay" selected="selected"><?php echo $text_pay; ?></option>
-                <?php } else { ?>
-                <option value="liqpay"><?php echo $text_pay; ?></option>
-                <?php } ?>
-                <?php if ($liqpay_type == 'card') { ?>
-                <option value="card" selected="selected"><?php echo $text_card; ?></option>
-                <?php } else { ?>
-                <option value="card"><?php echo $text_card; ?></option>
-                <?php } ?>
-              </select></td>
-          </tr>
-          <tr>
-            <td><?php echo $entry_total; ?></td>
-            <td><input type="text" name="liqpay_total" value="<?php echo $liqpay_total; ?>" /></td>
-          </tr>          
-          <tr>
-            <td><?php echo $entry_order_status; ?></td>
-            <td><select name="liqpay_order_status_id">
-                <?php foreach ($order_statuses as $order_status) { ?>
-                <?php if ($order_status['order_status_id'] == $liqpay_order_status_id) { ?>
-                <option value="<?php echo $order_status['order_status_id']; ?>" selected="selected"><?php echo $order_status['name']; ?></option>
-                <?php } else { ?>
-                <option value="<?php echo $order_status['order_status_id']; ?>"><?php echo $order_status['name']; ?></option>
-                <?php } ?>
-                <?php } ?>
-              </select></td>
-          </tr>
-          <tr>
-            <td><?php echo $entry_geo_zone; ?></td>
-            <td><select name="liqpay_geo_zone_id">
-                <option value="0"><?php echo $text_all_zones; ?></option>
-                <?php foreach ($geo_zones as $geo_zone) { ?>
-                <?php if ($geo_zone['geo_zone_id'] == $liqpay_geo_zone_id) { ?>
-                <option value="<?php echo $geo_zone['geo_zone_id']; ?>" selected="selected"><?php echo $geo_zone['name']; ?></option>
-                <?php } else { ?>
-                <option value="<?php echo $geo_zone['geo_zone_id']; ?>"><?php echo $geo_zone['name']; ?></option>
-                <?php } ?>
-                <?php } ?>
-              </select></td>
-          </tr>
-          <tr>
-            <td><?php echo $entry_status; ?></td>
-            <td><select name="liqpay_status">
-                <?php if ($liqpay_status) { ?>
-                <option value="1" selected="selected"><?php echo $text_enabled; ?></option>
-                <option value="0"><?php echo $text_disabled; ?></option>
-                <?php } else { ?>
-                <option value="1"><?php echo $text_enabled; ?></option>
-                <option value="0" selected="selected"><?php echo $text_disabled; ?></option>
-                <?php } ?>
-              </select></td>
-          </tr>
-          <tr>
-            <td><?php echo $entry_sort_order; ?></td>
-            <td><input type="text" name="liqpay_sort_order" value="<?php echo $liqpay_sort_order; ?>" size="1" /></td>
-          </tr>
-        </table>
-      </form>
+
+    <?php if ($error_warning): ?><div class="warning"><?=$error_warning?></div><?php endif ?>
+
+    <div class="box">
+        <div class="heading">
+            <h1><img src="view/image/payment.png" alt="" /> <?=$heading_title?></h1>
+            <div class="buttons">
+                <a onclick="$('#form').submit();" class="button"><?=$button_save?></a>
+                <a href="<?=$cancel?>" class="button"><?=$button_cancel?></a>
+            </div>
+        </div>
+        <div class="content">
+            <form action="<?=$action?>" method="post" enctype="multipart/form-data" id="form">
+                <table class="form">
+                    <tr>
+                        <td><span class="required">*</span> <?=$entry_public_key?></td>
+                        <td><input type="text" name="liqpay_public_key" value="<?=$liqpay_public_key?>" />
+                            <?php if ($error_public_key):?><span class="error"><?=$error_public_key?></span><?php endif?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="required">*</span> <?=$entry_private_key?></td>
+                        <td><input type="text" name="liqpay_private_key" value="<?=$liqpay_private_key?>" />
+                            <?php if ($error_private_key):?><span class="error"><?=$error_private_key?></span><?php endif?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="required">*</span> <?=$entry_action?></td>
+                        <td><input type="text" name="liqpay_action" value="<?=$liqpay_action?>" />
+                            <?php if ($error_action):?><span class="error"><?=$error_action?></span><?php endif?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><?=$entry_total?></td>
+                        <td><input type="text" name="liqpay_total" value="<?=$liqpay_total?>" /></td>
+                    </tr>
+                    <tr>
+                        <td><?=$entry_order_status?></td>
+                        <td>
+                            <select name="liqpay_order_status_id">
+                                <?php
+                                    foreach ($order_statuses as $order_status):
+                                        $order_status_id = $order_status['order_status_id'];
+                                        $sel = ($order_status_id == $liqpay_order_status_id);
+                                ?>
+                                    <option <?php if ($sel):?>selected="selected"<?php endif?> value="<?=$order_status_id?>">
+                                        <?=$order_status['name']?>
+                                    </option>
+                                <?php endforeach?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><?=$entry_geo_zone?></td>
+                        <td>
+                            <select name="liqpay_geo_zone_id">
+                                <option value="0"><?=$text_all_zones?></option>
+                                <?php
+                                    foreach ($geo_zones as $geo_zone):
+                                        $geo_zone_id = $geo_zone['geo_zone_id'];
+                                        $sel = ($geo_zone_id == $liqpay_geo_zone_id);
+                                ?>
+                                    <option <?php if ($sel):?>selected="selected"<?php endif?> value="<?=$geo_zone_id?>">
+                                        <?=$geo_zone['name']?>
+                                    </option>
+                                <?php endforeach?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><?=$entry_status?></td>
+                        <td>
+                            <select name="liqpay_status">
+                                <option <?php if ($liqpay_status): ?>selected="selected"<?php endif?> value="1">
+                                    <?=$text_enabled?>
+                                </option>
+                                <option <?php if (!$liqpay_status): ?>selected="selected"<?php endif?> value="0">
+                                    <?=$text_disabled?>
+                                </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td><?=$entry_sort_order?></td>
+                      <td><input type="text" name="liqpay_sort_order" value="<?=$liqpay_sort_order?>" size="1" /></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </div>
-  </div>
 </div>
-<?php echo $footer; ?>
+<?=$footer?>
