@@ -51,6 +51,7 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
 <body>
 <div id="container">
 <div id="header">
+  asdfae;lkjasdfl;kasf
   <?php if ($logo) { ?>
   <div id="logo"><a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a></div>
   <?php } ?>
