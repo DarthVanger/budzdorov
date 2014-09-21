@@ -221,7 +221,22 @@ class ControllerProductProduct extends Controller {
 				'separator' => $this->language->get('text_separator')
 			);
 
-			$this->document->setTitle($product_info['name']);
+      /**
+       * Generate page title from breadcrumbs
+       * @author darthvanger@gmail.com
+       */
+      $title = '';
+      $breadcrumbs = $this->data['breadcrumbs'];
+      // concat all the breadcrumbs in reverse order except the last one
+      // (because the last one is usually "main page"
+      for ($i=count($breadcrumbs) - 1; $i>0; $i--) {
+          $title .= $breadcrumbs[$i]['text'];
+          if ($i>1) { 
+            $title .=', ';
+          }
+      }
+			//$this->document->setTitle($product_info['name']);
+			$this->document->setTitle($title);
 			$this->document->setDescription($product_info['meta_description']);
 			$this->document->setKeywords($product_info['meta_keyword']);
 			$this->document->addLink($this->url->link('product/product', 'product_id=' . $this->request->get['product_id']), 'canonical');

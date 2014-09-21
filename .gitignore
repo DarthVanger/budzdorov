@@ -7,6 +7,9 @@
 /system/cache/**
 !/system/cache/index.html
 
+# vqmod cache
+/vqmod/vqcache/**
+
 # Image Cache Files
 /image/cache/*
 !/image/cache/index.html
