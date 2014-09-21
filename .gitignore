@@ -9,6 +9,7 @@
 
 # vqmod cache
 /vqmod/vqcache/**
+/vqmod/mods.cache
 
 # Image Cache Files
 /image/cache/*
