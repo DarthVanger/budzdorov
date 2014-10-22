@@ -10,19 +10,21 @@ html {
 body {
 	background: #f4f6f1 url('../image/bg.jpg') no-repeat top center;
 	color: #000000;
-	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	margin: 0px;
 	padding: 0px;
-    font-size: 14px;
+    font-size: 12px;
 }
 h1, .welcome {
 	color: #636E75;
+	font: Verdana;
 	margin-top: 0px;
 	margin-bottom: 20px;
     font-family: "Noto-serif";
-    font-family: "Andika";
+    font-style: italic;
     font-size: 2em;
 	font-weight: normal;
+	text-shadow: 0 0 1px rgba(0, 0, 0, .01);
 }
 h2 {
 	color: #636E75;
@@ -666,17 +668,7 @@ a.button:hover span {
 	margin-bottom: 20px;
 	z-index: 2;
 	overflow: auto;
-}
-/* overriding inline styles in descriptions */
-.tab-content, .tab-content p, .tab-content span, .tab-content strong {
-  line-height: 1.5em!important;
-  color: rgba(0,0,0,0.7)!important;
-  font-size: 14px!important;
-    font-family: Open Sans!important;
-  text-align: justify;
-}
-.tab-content p {
-  padding: .5em!important;
+  line-height: 1.3em!important;
 }
 /* box */
 .box {
@@ -717,7 +709,6 @@ a.button:hover span {
 	overflow: auto;
 	margin:0 auto 0 auto;
   text-align: justify;
-  font-size: 12px;
 }
 .box-product:after {
   content: "";
@@ -802,7 +793,7 @@ ul.box-category > li + li {
 }
 ul.box-category > li > a {
 	text-decoration: none;
-	color: #555;
+	color: #333;
 }
 ul.box-category > li > a:hover{
 	color:#666;			
@@ -1153,7 +1144,6 @@ ul.box-category > li ul > li > a.active {
 	margin-bottom: 10px;
 	line-height: 20px;
 	color: #4D4D4D;
-  font-family: Andika;
 }
 .product-info .description span {
 	color: #554400;
@@ -1169,8 +1159,7 @@ ul.box-category > li ul > li > a.active {
 	margin-bottom: 10px;
 	font-size: 15px;
 	font-weight: bold;
-	color: #555;
-  font-family: Andika;
+	color: #333333;
 }
 .product-info .price-old {
 	color: #F00;
