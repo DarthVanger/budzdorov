@@ -587,23 +587,23 @@ table.list .center {
 .category-under-product {
 }
 .cart .button {
-    width: 100%;
-    cursor: pointer;
-    background-color: #a2336a;
-    background-color: #d2639a;
-    background-color: #6c0;
+  cursor: pointer;
+  background-color: #a2336a;
+  background-color: #d2639a;
+  background-color: #6c0;
+  border: solid white 4px;
+  box-shadow: 1px 1px 10px #aaa;
 	margin:7px 0 7px 0;
-	padding:5px 6px 5px 6px;
-	border:none;
+	padding: 0.7em 2em; 
 	color:#fff;
-    font-weight: bold;
-	border-radius: 2px; 
-					
+  font-weight: bold;
+	border-radius: 30px; 
+  transition: all .6s;
 }
-.cart .button:hover{
-    background-color: #8e0;
-    color: #000;
+.cart .button:hover, .box-product>div:hover .cart .button {
+    box-shadow: 1px 1px 15px #06a9d7;
 }
+
 a.button span {
 	color: #fff;
 	margin:7px 0 7px 0;
@@ -674,6 +674,7 @@ a.button:hover span {
   font-size: 14px!important;
     font-family: Open Sans!important;
   text-align: justify;
+  background: 0!important;
 }
 .tab-content p {
   padding: .5em!important;
@@ -717,7 +718,7 @@ a.button:hover span {
 	overflow: auto;
 	margin:0 auto 0 auto;
   text-align: justify;
-  font-size: 12px;
+  font-size: 11px;
 }
 .box-product:after {
   content: "";
@@ -725,11 +726,17 @@ a.button:hover span {
   width: 100%;
 }
 .box-product > div {
-	width:auto;
+	width: auto;
 	display: inline-block;
 	vertical-align: top;
 	text-align:center;
-	margin:10px auto 10px auto;
+	margin: 10px auto;
+  transition: all 0.6s;
+  padding: 10px;
+  border-radius: 20px;
+}
+.box-product>div:hover {
+  box-shadow: 1px 1px 10px #aaa; 
 }
 #column-left + #column-right + #content .box-product > div {
 	width: 119px;
@@ -753,7 +760,7 @@ a.button:hover span {
 	display: block;
 	font-weight: bold;
 	color: #333333;
-	margin-bottom: 4px;
+	margin: 6px 0 4px 0;
 }
 .box-product .price-old {
 	color: #F00;
@@ -1130,6 +1137,10 @@ ul.box-category > li ul > li > a.active {
 	margin-bottom: 20px;
 	padding: 10px;
 	text-align: center;
+  border-radius: 10px;
+}
+.product-info .image img {
+  border-radius: 5px;
 }
 .product-info .image-additional {
 	width: 260px;
