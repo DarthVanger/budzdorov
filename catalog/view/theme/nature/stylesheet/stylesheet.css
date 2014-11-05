@@ -668,7 +668,8 @@ a.button:hover span {
 	overflow: auto;
 }
 /* overriding inline styles in descriptions */
-.tab-content, .tab-content p, .tab-content span, .tab-content strong {
+.tab-content, .tab-content p, .tab-content span, .tab-content strong,
+.category-info p, .category-info span, .cteagory-info strong {
   line-height: 1.5em!important;
   color: rgba(0,0,0,0.7)!important;
   font-size: 14px!important;
@@ -859,7 +860,7 @@ ul.box-category > li ul > li > a.active {
     line-height: 1.5em;
 }
 .category-info {
-	overflow: auto;
+	overflow: visible; /* don't know why is it even overflowing, but don't wanna scroll bar to show up... */
 	margin-bottom: 20px;
 }
 .category-info .image {

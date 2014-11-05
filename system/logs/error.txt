@@ -117,3 +117,8 @@
 2014-09-20 19:06:27 - PHP Notice:  Undefined variable: result in /var/www/opencart/catalog/controller/module/featured.php on line 56
 2014-09-20 19:06:27 - PHP Notice:  Undefined variable: result in /var/www/opencart/catalog/controller/module/featured.php on line 56
 2014-09-20 19:06:27 - PHP Notice:  Undefined variable: result in /var/www/opencart/catalog/controller/module/featured.php on line 56
+2014-11-06 0:20:21 - PHP Warning:  session_start(): open(/var/lib/php5/sess_qcdlub2kc0l5hucrqqtk0jk5k6, O_RDWR) failed: Permission denied (13) in /var/www/opencart/system/library/session.php on line 12
+2014-11-06 0:21:07 - PHP Warning:  session_start(): open(/var/lib/php5/sess_qcdlub2kc0l5hucrqqtk0jk5k6, O_RDWR) failed: Permission denied (13) in /var/www/opencart/system/library/session.php on line 12
+2014-11-06 0:21:23 - PHP Warning:  session_start(): open(/var/lib/php5/sess_qcdlub2kc0l5hucrqqtk0jk5k6, O_RDWR) failed: Permission denied (13) in /var/www/opencart/system/library/session.php on line 12
+2014-11-06 0:21:25 - PHP Warning:  session_start(): open(/var/lib/php5/sess_qcdlub2kc0l5hucrqqtk0jk5k6, O_RDWR) failed: Permission denied (13) in /var/www/opencart/system/library/session.php on line 12
+2014-11-06 0:21:25 - PHP Warning:  session_start(): open(/var/lib/php5/sess_qcdlub2kc0l5hucrqqtk0jk5k6, O_RDWR) failed: Permission denied (13) in /var/www/opencart/system/library/session.php on line 12
