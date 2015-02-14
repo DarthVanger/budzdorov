@@ -48,7 +48,9 @@
       </select>
     </div>
   </div>
-  <div class="product-compare"><a href="<?php echo $compare; ?>" id="compare-total"><?php echo $text_compare; ?></a></div>
+  <!-- @author darthvanger@gmail.com: don't need compare list
+      <div class="product-compare"><a href="<?php echo $compare; ?>" id="compare-total"><?php echo $text_compare; ?></a></div>
+  -->
   <div class="category-title">
     <h2 class="text-center"><?php echo $heading_title; ?></h2>
   </div>
