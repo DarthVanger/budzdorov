@@ -65,6 +65,7 @@ $_['text_return_status']               = 'Статусы возврата';
 $_['text_sale']                        = 'Продажи';
 $_['text_shipping']                    = 'Модули доставки';
 $_['text_setting']                     = 'Настройки';
+$_['text_blog']                        = 'Блог';
 $_['text_stock_status']                = 'Состояние на складе';
 $_['text_support']                     = 'Форум';
 $_['text_system']                      = 'Система';
