@@ -64,11 +64,13 @@
       <div class="price">
         <?php if (!$product['special']) { ?>
         <?php echo $product['price']; ?>
+        <!-- @author darthvanger@gmail.com: this breaks the design
         <div class="discount">
           <?php foreach ($product['discounts'] as $discount) { ?>
           <?php echo sprintf($text_discount, $discount['price'], $discount['quantity']); ?><br />
           <?php } ?>
         </div>
+        -->
         <?php } else { ?>
         <span class="price-old"><?php echo $product['price']; ?></span> <span class="price-new"><?php echo $product['special']; ?></span>
         <?php } ?>
