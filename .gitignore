@@ -20,4 +20,4 @@
 !/system/logs/index.html
 
 # Resources folder
-/resources/**
+#/resources/**
