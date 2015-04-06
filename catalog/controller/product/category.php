@@ -91,20 +91,21 @@ class ControllerProductCategory extends Controller {
 
 		$category_info = $this->model_catalog_category->getCategory($category_id);
 
-		if ($category_info) {
-      /**
-       * Generate page title from breadcrumbs
-       * @author darthvanger@gmail.com
-       */
-      $breadcrumbs = $this->data['breadcrumbs'];
-      $title = $category_info['name'];
-      // concat all the breadcrumbs in reverse order except the last one
-      // (because the last one is usually "main page"
-      for ($i=count($breadcrumbs) - 1; $i>0; $i--) {
-          $title .= ', '.$breadcrumbs[$i]['text'];
-      }
-			//$this->document->setTitle($category_info['name']);
-			$this->document->setTitle($title);
+        if ($category_info) {
+            /**
+             * Generate page title from breadcrumbs
+             * @author darthvanger@gmail.com
+             */
+            //$breadcrumbs = $this->data['breadcrumbs'];
+            //$title = $category_info['name'];
+            //// concat all the breadcrumbs in reverse order except the last one
+            //// (because the last one is usually "main page"
+            //for ($i=count($breadcrumbs) - 1; $i>0; $i--) {
+            //    $title .= ', '.$breadcrumbs[$i]['text'];
+            //}
+
+			//$this->document->setTitle($title);
+			$this->document->setTitle($category_info['name'] . ' купить');
 			$this->document->setDescription($category_info['meta_description']);
 			$this->document->setKeywords($category_info['meta_keyword']);
 			$this->document->addScript('catalog/view/javascript/jquery/jquery.total-storage.min.js');
