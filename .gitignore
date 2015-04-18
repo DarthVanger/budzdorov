@@ -8,8 +8,8 @@
 !/system/cache/index.html
 
 # vqmod cache
-/vqmod/vqcache/**
-/vqmod/mods.cache
+vqmod/vqcache
+vqmod/mods.cache
 
 # Image Cache Files
 /image/cache/*
