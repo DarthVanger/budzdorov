@@ -1,21 +1,21 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://localhost/opencart/');
+define('HTTP_SERVER', 'http://localhost/vitalart/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://localhost/opencart/');
+define('HTTPS_SERVER', 'http://localhost/vitalart/');
 
 // DIR
-define('DIR_APPLICATION', '/var/www/opencart/catalog/');
-define('DIR_SYSTEM', '/var/www/opencart/system/');
-define('DIR_DATABASE', '/var/www/opencart/system/database/');
-define('DIR_LANGUAGE', '/var/www/opencart/catalog/language/');
-define('DIR_TEMPLATE', '/var/www/opencart/catalog/view/theme/');
-define('DIR_CONFIG', '/var/www/opencart/system/config/');
-define('DIR_IMAGE', '/var/www/opencart/image/');
-define('DIR_CACHE', '/var/www/opencart/system/cache/');
-define('DIR_DOWNLOAD', '/var/www/opencart/download/');
-define('DIR_LOGS', '/var/www/opencart/system/logs/');
+define('DIR_APPLICATION', '/var/www/vitalart/catalog/');
+define('DIR_SYSTEM', '/var/www/vitalart/system/');
+define('DIR_DATABASE', '/var/www/vitalart/system/database/');
+define('DIR_LANGUAGE', '/var/www/vitalart/catalog/language/');
+define('DIR_TEMPLATE', '/var/www/vitalart/catalog/view/theme/');
+define('DIR_CONFIG', '/var/www/vitalart/system/config/');
+define('DIR_IMAGE', '/var/www/vitalart/image/');
+define('DIR_CACHE', '/var/www/vitalart/system/cache/');
+define('DIR_DOWNLOAD', '/var/www/vitalart/download/');
+define('DIR_LOGS', '/var/www/vitalart/system/logs/');
 
 // DB
 define('DB_DRIVER', 'mysqli');
