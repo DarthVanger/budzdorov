@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<modification>
+    <id><![CDATA[Add a form in product page for easy access]]></id>
+    <version><![CDATA[1]]></version>
+    <vqmver><![CDATA[]]></vqmver>
+    <author><![CDATA[Rehan Anis <rehan@webcare.pk>]]></author>
+    <file name="catalog/controller/product/product.php">
+        <operation>
+            <search position="after"><![CDATA[$this->data['button_continue'] = $this->language->get('button_continue');]]></search>
+            <add><![CDATA[//product form
+                            $this->data['button_enquire'] = $this->language->get('button_enquire');
+                            $this->data['enquire_heading'] = $this->language->get('enquire_heading');
+                            $this->data['enquire_quotename'] = $this->language->get('enquire_quotename');
+                            $this->data['enquire_contactnumber'] = $this->language->get('enquire_contactnumber');
+                            $this->data['enquire_details'] = $this->language->get('enquire_details');
+                            $this->data['enquire_email'] = $this->language->get('enquire_email');
+
+                            $this->data['error_email'] = $this->language->get('error_email'); 
+                            $this->data['error_quotename'] = $this->language->get('error_quotename');
+                            $this->data['error_contactnumber'] = $this->language->get('error_contactnumber');
+                            $this->data['error_details'] = $this->language->get('error_details');]]>
+			</add>
+        </operation>
+      
+  <operation>
+            <search position="after"><![CDATA[$this->data['points'] = $product_info['points'];]]></search>
+            <add><![CDATA[// language text for email to customer
+			$this->data['name'] = $product_info['name'];
+            $this->data['product_url'] = $this->url->link('product/product', $url . '&product_id=' . $this->request->get['product_id']);
+
+			$this->data['request_quote'] = $this->language->get('request_quote');
+			$this->data['back_soon'] = $this->language->get('back_soon');
+			$this->data['regards'] = $this->language->get('regards');
+			$this->data['thanks_request'] = $this->language->get('thanks_request');
+			$this->data['company_name'] = $this->config->get('config_name');
+
+			if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
+			//Secure The Submitted Data
+			$quotename = stripslashes($_POST["quotename"]);
+			$contactnumber = stripslashes($_POST["contactnumber"]);
+			$email = stripslashes($_POST["email"]);
+			$details = stripslashes($_POST["details"]);
+			$product = $this->data['name'];
+            $product_id = $this->data['product_id'];
+            $product_url = $this->data['product_url'];
+
+			$request = $this->data['request_quote'];
+			$back_soon = $this->data['back_soon'];
+			$regards = $this->data['regards'];
+			$thanks = $this->data['thanks_request'];
+			$company = $this->data['company_name'];
+
+			//Build The Email To The Admin
+			$to = $this->config->get('config_email');
+			$subject = "Customer Quick Order For $product";
+			$theEmail = "Product Order Details..
+			<p>From: $quotename </p>
+			<p>Contact: $contactnumber </p>
+			<p>Email: ($email)</p>
+			<p>Product: <strong>$product</strong></p>
+			<p>Url: $product_url,</p>
+			<p>Address: $details</p>";
+
+			$headers = "Content-type: text/html\r\n";
+			$headers .= "From: $to";
+			mail($to, $subject, $theEmail, $headers);
+
+			//Build Confirmation Email To The Customer
+			$to2 = "$email";
+			$subject2 = "$request";
+			$theEmail2 = "
+			<h1>$thanks</h1>
+			<p>$back_soon</p>
+			<p>$regards,</p>
+			<p>$company</p>";
+
+			$headers2 = "Content-type: text/html\r\n";
+			$headers2 .= "From: $to\r\n";
+			mail($to2, $subject2, $theEmail2, $headers2);
+
+	  		$this->redirect($this->url->link('information/contact/success'));
+    	}
+
+		if (isset($this->error['quotename'])) {
+    		$this->data['error_quotename'] = $this->error['quotename'];
+		} else {
+			$this->data['error_quotename'] = '';
+		}
+
+		if (isset($this->error['contactnumber'])) {
+    		$this->data['error_contactumber'] = $this->error['contactnumber'];
+		} else {
+			$this->data['error_contactnumber'] = '';
+		}
+		
+		if (isset($this->error['email'])) {
+			$this->data['error_email'] = $this->error['email'];
+		} else {
+			$this->data['error_email'] = '';
+		}		
+		
+		if (isset($this->error['details'])) {
+			$this->data['error_details'] = $this->error['details'];
+		} else {
+			$this->data['error_details'] = '';
+		}		
+		
+ 		if (isset($this->request->post['quotename'])) {
+			$this->data['quotename'] = $this->request->post['quotename'];
+		} else {
+			$this->data['quotename'] = '';
+		}
+
+		if (isset($this->request->post['contactnumber'])) {
+			$this->data['contactnumber'] = $this->request->post['contactnumber'];
+		} else {
+			$this->data['contactnumber'] = '';
+		}
+
+		if (isset($this->request->post['email'])) {
+			$this->data['email'] = $this->request->post['email'];
+		} else {
+			$this->data['email'] = '';
+		}
+
+		if (isset($this->request->post['product'])) {
+			$this->data['product'] = $this->request->post['product'];
+		} else {
+			$this->data['product'] = '';
+		}
+		
+		if (isset($this->request->post['details'])) {
+			$this->data['details'] = $this->request->post['details'];
+		} else {
+			$this->data['details'] = '';
+		}]]></add>
+        </operation>
+        <operation>
+            <search position="after" offset="4"><![CDATA[$json['success'] = $this->language->get('text_upload');]]></search>
+            <add><![CDATA[protected function validate() {
+    	if ((utf8_strlen($this->request->post['quotename']) < 3) || (utf8_strlen($this->request->post['quotename']) > 50)) {
+      		$this->error['quotename'] = $this->language->get('error_quotename');
+    	}
+
+    	if ((utf8_strlen($this->request->post['contactnumber']) < 10) || (utf8_strlen($this->request->post['contactnumber']) > 15)) {
+      		$this->error['contactnumber'] = $this->language->get('error_contactnumber');
+    	}
+
+    	if (!preg_match('/^[^\@]+@.*\.[a-z]{2,6}$/i', $this->request->post['email'])) {
+      		$this->error['email'] = $this->language->get('error_email');
+    	}
+
+    	if ((utf8_strlen($this->request->post['details']) < 5) || (utf8_strlen($this->request->post['details']) > 3000)) {
+      		$this->error['details'] = $this->language->get('error_details');
+    	}
+		
+		if (!$this->error) {
+	  		return true;
+		} else {
+	  		return false;
+		}  	  
+  	}]]></add>
+        </operation>
+        <operation>
+            <search position="before"><![CDATA[$this->data['heading_title'] = $product_info['name'];]]></search>
+            <add><![CDATA[$this->data['action'] = $this->url->link('product/product', 'product_id=' . $this->request->get['product_id']);]]></add>
+        </operation>
+    </file>
+    <file name="catalog/language/english/english.php">
+        <operation>
+            <search position="after"><![CDATA[$_['button_cart']           = 'Add to Cart';]]></search>
+            <add><![CDATA[$_['button_enquire']        = 'Submit Your Quote';]]></add>
+        </operation>
+    </file>
+    <file name="catalog/language/english/product/product.php">
+        <operation>
+            <search position="after"><![CDATA[$_['error_filetype']    = 'Invalid file type!';]]></search>
+            <add><![CDATA[//enquiry form 
+$_['enquire_heading'] 	= 'Quick Order Now.';
+$_['enquire_quotename'] = 'Your Name';
+$_['enquire_contactnumber'] = 'Contact Number';
+$_['enquire_details'] 	= 'Your Address';
+$_['enquire_email'] 	= 'Email Address';
+$_['text_location']  = 'Our Location';
+$_['text_contact']   = 'Contact Form';
+$_['text_address']   = 'Address:';
+$_['text_email']     = 'E-Mail:';
+$_['text_telephone'] = 'Telephone:';
+$_['text_fax']       = 'Fax:';
+$_['text_message']   = '<p>Your Message Has been Successfully Sent To Store Manager! Please check your email by the time for your message response. If you do not have any email address Please contact us using our chat Panel or our Provided contact number for product details. Thank You</p>';
+
+// Email
+$_['email_subject']  = 'Enquiry %s';
+
+// Errors
+$_['error_quotename']     = 'Please Provide Your Name.';
+$_['error_contactnumber'] = 'Please Provide your number!';
+/* $_['error_email']    = 'E-Mail Address does not appear to be valid!'; */
+$_['error_details']  = 'Please Provide Your Correct Address.';
+$_['error_captcha']  = 'Verification code does not match the image!';
+
+$_['request_quote']  = 'Thank you for Using Yes Mobile Pakistan Services!';
+$_['back_soon']  = 'Your Message has been received to the Store owner, One of our customer care expert will get back to you very soon with more details according to your Quote!';
+$_['regards']  = 'Regards,';
+$_['thanks_request']  = 'Thank You for Asking a Quote - Yes Mobile Pakistan';
+$_['company_name']  = '%s';]]></add>
+        </operation>
+    </file>
+    <file name="catalog/view/theme/*/template/product/product.tpl">
+        <operation>
+            <search position="before" index="1"><![CDATA[<?php if ($review_status) { ?>]]></search>
+            <add><![CDATA[
+                
+            <div class="cart">
+            <form action="<?php echo $action; ?>" enctype="multipart/form-data" method="post" name="quoteForm">
+             <h2><?php echo $enquire_heading; ?></h2>
+                    <table>
+                      <tr align="left">
+                        <td><?php echo $enquire_quotename; ?></td>
+                          <td><input type="text" name="quotename" /> 
+            <?php if ($error_quotename) { ?>
+                <span class="error"><?php echo $error_quotename; ?></span>
+              <?php } ?>
+            </td>
+                        </tr>
+            <tr>
+            <td><?php echo $enquire_contactnumber; ?></td>
+            <td><input type="text" name="contactnumber" /> 
+            <?php if ($error_contactnumber) { ?>
+                <span class="error"><?php echo $error_contactnumber; ?></span>
+              <?php } ?>
+            </td>
+            </tr>
+            <tr>
+            <td><?php echo $enquire_email; ?></td>
+            <td><input type="text" name="email" /> 
+            <?php if ($error_email) { ?>
+                <span class="error"><?php echo $error_email; ?></span>
+              <?php } ?> 
+            </td>
+            </tr>
+            <tr>
+            <td><?php echo $enquire_details; ?></td>
+            <td><textarea name="details"></textarea> 
+            <?php if ($error_details) { ?>
+                <span class="error"><?php echo $error_details; ?></span>
+              <?php } ?>
+            </td>
+            </tr>
+            <tr>
+            <td></td>
+            <td><input type="submit" value="Submit Now"  id="button-enquire" class="button" /></td>
+            </tr>
+            </table>
+            </form>
+          </div>
+
+          ]]></add>
+      </operation>
+    </file>
+</modification>
