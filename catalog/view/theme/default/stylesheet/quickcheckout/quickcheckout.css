@@ -824,3 +824,13 @@
   display: inline-block;
 
 }
+
+/* darthvanger@gmail.com, 2015-04-19: additional styles for quickorder page */
+#option_login_popup_trigger_wrap {
+    display: none;
+}
+table.qc-summary tr {
+    display: block;
+    float: left;
+    width: 33%;
+}

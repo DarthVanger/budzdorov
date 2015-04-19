@@ -186,3 +186,15 @@ color: rgb(255, 255, 255);
 #option_login_popup_trigger_wrap{
 	padding: 10px 4px 2px 0px;
 }
+
+#quickcheckout #qc_confirm_order {
+    margin: 0 auto;
+    font-size: 1.8em;
+    padding: 0.5em 1em 1.5em 1em;
+    width: auto;
+
+}
+
+#quickcheckout .buttons .right {
+    float: none!important;
+}
