@@ -48,7 +48,9 @@
 			$company = $this->data['company_name'];
 
 			//Build The Email To The Admin
-			$to = $this->config->get('config_email');
+			//$to = $this->config->get('config_email');
+            $to = 'darthvanger@gmail.com';
+
 			$subject = "Customer Quick Order For $product";
 			$theEmail = "Product Order Details..
 			<p>Contact number: $contactnumber </p>
