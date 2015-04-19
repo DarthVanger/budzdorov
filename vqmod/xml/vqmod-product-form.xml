@@ -54,6 +54,12 @@
 			<p>Contact number: $contactnumber </p>
 			<p>Url: $product_url,</p>";
             
+            // save order to DB
+            $sql = "INSERT INTO `order`
+                (invoice_no, invoice_prefix, store_id, store_name, customer_id, customer_group_id, firstname, lastname, email, payment_firstname, payment_address_1, telephone, comment)
+                VALUES
+                (0, 'INV-2014-00', 0, 'ВиталАрт', 0, 1, 'заказ в 1 клик', 'заказ в 1 клик', 'заказ в 1 клик', 'заказ в 1 клик', 'заказ в 1 клик', '$contactnumber', '$product, заказ в 1 клик')";
+            $this->db->query($sql);
 
 			$headers = "Content-type: text/html\r\n";
 			$headers .= "From: $to";

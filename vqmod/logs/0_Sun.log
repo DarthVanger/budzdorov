@@ -22,3 +22,15 @@ VQMod::_parseMods - DOM UNABLE TO LOAD: /var/www/vitalart/vqmod/xml/test.xml
 ----------------------------------------------------------------------
 
 
+---------- Date: 2015-04-19 17:22:53 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /vitalart/product/product
+VQMod::_parseMods - DOM UNABLE TO LOAD: /var/www/vitalart/vqmod/xml/test.xml
+----------------------------------------------------------------------
+
+
+---------- Date: 2015-04-19 17:31:04 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /vitalart/oil
+VQMod::_parseMods - DOM UNABLE TO LOAD: /var/www/vitalart/vqmod/xml/test.xml
+----------------------------------------------------------------------
+
+
