@@ -59,7 +59,7 @@
 			$headers .= "From: $to";
 			mail($to, $subject, $theEmail, $headers);
 
-	  		$this->redirect($this->url->link('/simpleorder-success'));
+	  		$this->redirect($this->url->link('simpleorder-success'));
     	}
 
 		if (isset($this->error['contactnumber'])) {
