@@ -53,17 +53,13 @@ DD_belatedPNG.fix('#logo img');
   <?php echo $language; ?>
   <?php echo $currency; ?>
   <?php echo $cart; ?>
+  <!-- darthvanger@gmail.com, 2015-04-19: do we need search? -->
+  <!--
   <div id="search">
     <div class="button-search"></div>
     <input type="text" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />
   </div>
-  <div id="welcome">
-    <?php if (!$logged) { ?>
-    <?php echo $text_welcome; ?>
-    <?php } else { ?>
-    <?php echo $text_logged; ?>
-    <?php } ?>
-  </div>
+  -->
       <div class="links">
         <a href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a>
         <a href="/delivery">Доставка</a>
