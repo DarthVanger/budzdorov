@@ -82,6 +82,9 @@ class ControllerCheckoutCheckout extends Controller {
 			$this->data['quickconfirm'] = $this->request->get['quickconfirm'];
 		}
 
+        // #debugging
+        //echo 'template name = ' . $this->template;
+
 		$this->response->setOutput($this->render());
 	}
 
