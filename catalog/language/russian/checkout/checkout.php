@@ -25,8 +25,8 @@ $_['text_your_password']             = 'Пароль';
 $_['text_agree']                     = 'Я прочитал(а) <a class="colorbox" href="%s" alt="%s"><b>%s</b></a> и согласен(на) с условиями';
 $_['text_address_new']               = 'Добавить новый адрес';
 $_['text_address_existing']          = 'Использовать существующий адрес';
-$_['text_shipping_method']           = 'Пожалуйста выберите способ доставки:';
-$_['text_payment_method']            = 'Пожалуйста выберите способ оплаты:';
+$_['text_shipping_method']           = 'Выберите способ доставки:';
+$_['text_payment_method']            = 'Выберите способ оплаты:';
 $_['text_comments']                  = 'Вы можете добавить комментарий к своему заказу:';
 
 // Column
@@ -41,7 +41,7 @@ $_['entry_email_address']            = 'E-Mail Адрес:';
 $_['entry_email']                    = 'E-Mail:';
 $_['entry_password']                 = 'Пароль:';
 $_['entry_confirm']                  = 'Подтвердите пароль:';
-$_['entry_firstname']                = 'Имя, Отчество:';
+$_['entry_firstname']                = 'Фамилия, имя, отчество';
 $_['entry_lastname']                 = 'Фамилия:';
 $_['entry_telephone']                = 'Телефон:';
 $_['entry_fax']                      = 'Факс:';
@@ -49,7 +49,7 @@ $_['entry_account']           	     = 'Группа покупателей:';
 $_['entry_company']                  = 'Компания:';
 $_['entry_company_id']               = 'ОГРН:';
 $_['entry_tax_id']                   = 'ИНН:';
-$_['entry_address_1']                = 'Адрес:';
+$_['entry_address_1']                = 'Адрес или № отделения Новой почты:';
 $_['entry_address_2']                = 'Адрес (продолжение):';
 $_['entry_postcode']                 = 'Индекс:';
 $_['entry_city']                     = 'Город:';

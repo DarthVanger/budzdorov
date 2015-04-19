@@ -500,7 +500,7 @@ $_['quickcheckout_settings'] = array('general' => array(
 										),
 										'shipping_method' => array(
 											'sort_order' => 4,
-											'column' => 1,
+											'column' => 2,
 											'row' => 1,
 											'display' => 1,
 										    'input_style' => 'radio',
@@ -513,7 +513,7 @@ $_['quickcheckout_settings'] = array('general' => array(
 										),
 										'payment_method' =>array(
 											'sort_order' => 5,
-											'column' => 2,
+											'column' => 1,
 											'row' => 1,
 											'display' => 1,
 										    'display_options' => 1,
