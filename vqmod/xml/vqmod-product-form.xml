@@ -165,18 +165,22 @@ $_['company_name']  = '%s';]]></add>
             <div class="cart">
             <form action="<?php echo $action; ?>" enctype="multipart/form-data" method="post" name="quoteForm">
              <h2><?php echo $enquire_heading; ?></h2>
+             <div>Введите Ваш номер телефона
                     <table>
             <tr>
-            <td style="padding-right: 20px"><?php echo $enquire_contactnumber; ?></td>
-            <td><input type="text" name="contactnumber" /> 
-            <?php if ($error_contactnumber) { ?>
-                <span class="error"><?php echo $error_contactnumber; ?></span>
-              <?php } ?>
+            <td style="padding-right: 20px">
+                <input type="text" name="contactnumber" placeholder="+38 0__ ___ ____"/> 
+            </td>
+            <td>
+                <input type="submit" value="Заказать в 1 клик"  id="button-enquire" class="button" />
             </td>
             </tr>
             <tr>
-            <td></td>
-            <td><input type="submit" value="Заказать в 1 клик"  id="button-enquire" class="button" /></td>
+            <td colspan="2">
+                <?php if ($error_contactnumber) { ?>
+                    <span class="error"><?php echo $error_contactnumber; ?></span>
+                <?php } ?>
+            </td>
             </tr>
             </table>
             </form>
