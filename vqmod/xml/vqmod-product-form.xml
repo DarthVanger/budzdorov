@@ -9,15 +9,15 @@
             <search position="after"><![CDATA[$this->data['button_continue'] = $this->language->get('button_continue');]]></search>
             <add><![CDATA[//product form
                             $this->data['button_enquire'] = $this->language->get('button_enquire');
-                            $this->data['enquire_heading'] = $this->language->get('enquire_heading');
+                            $this->data['enquire_heading'] = 'Заказать в 1 клик'; 
                             $this->data['enquire_quotename'] = $this->language->get('enquire_quotename');
-                            $this->data['enquire_contactnumber'] = $this->language->get('enquire_contactnumber');
+                            $this->data['enquire_contactnumber'] = 'Ваш номер телефона';
                             $this->data['enquire_details'] = $this->language->get('enquire_details');
                             $this->data['enquire_email'] = $this->language->get('enquire_email');
 
                             $this->data['error_email'] = $this->language->get('error_email'); 
                             $this->data['error_quotename'] = $this->language->get('error_quotename');
-                            $this->data['error_contactnumber'] = $this->language->get('error_contactnumber');
+                            $this->data['error_contactnumber'] = 'Вы указали слишком короткий номер телефона';
                             $this->data['error_details'] = $this->language->get('error_details');]]>
 			</add>
         </operation>
@@ -36,10 +36,7 @@
 
 			if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
 			//Secure The Submitted Data
-			$quotename = stripslashes($_POST["quotename"]);
 			$contactnumber = stripslashes($_POST["contactnumber"]);
-			$email = stripslashes($_POST["email"]);
-			$details = stripslashes($_POST["details"]);
 			$product = $this->data['name'];
             $product_id = $this->data['product_id'];
             $product_url = $this->data['product_url'];
@@ -54,56 +51,22 @@
 			$to = $this->config->get('config_email');
 			$subject = "Customer Quick Order For $product";
 			$theEmail = "Product Order Details..
-			<p>From: $quotename </p>
-			<p>Contact: $contactnumber </p>
-			<p>Email: ($email)</p>
-			<p>Product: <strong>$product</strong></p>
-			<p>Url: $product_url,</p>
-			<p>Address: $details</p>";
+			<p>Contact number: $contactnumber </p>
+			<p>Url: $product_url,</p>";
+            
 
 			$headers = "Content-type: text/html\r\n";
 			$headers .= "From: $to";
 			mail($to, $subject, $theEmail, $headers);
 
-			//Build Confirmation Email To The Customer
-			$to2 = "$email";
-			$subject2 = "$request";
-			$theEmail2 = "
-			<h1>$thanks</h1>
-			<p>$back_soon</p>
-			<p>$regards,</p>
-			<p>$company</p>";
-
-			$headers2 = "Content-type: text/html\r\n";
-			$headers2 .= "From: $to\r\n";
-			mail($to2, $subject2, $theEmail2, $headers2);
-
-	  		$this->redirect($this->url->link('information/contact/success'));
+	  		$this->redirect($this->url->link('/simpleorder-success'));
     	}
-
-		if (isset($this->error['quotename'])) {
-    		$this->data['error_quotename'] = $this->error['quotename'];
-		} else {
-			$this->data['error_quotename'] = '';
-		}
 
 		if (isset($this->error['contactnumber'])) {
     		$this->data['error_contactumber'] = $this->error['contactnumber'];
 		} else {
 			$this->data['error_contactnumber'] = '';
 		}
-		
-		if (isset($this->error['email'])) {
-			$this->data['error_email'] = $this->error['email'];
-		} else {
-			$this->data['error_email'] = '';
-		}		
-		
-		if (isset($this->error['details'])) {
-			$this->data['error_details'] = $this->error['details'];
-		} else {
-			$this->data['error_details'] = '';
-		}		
 		
  		if (isset($this->request->post['quotename'])) {
 			$this->data['quotename'] = $this->request->post['quotename'];
@@ -138,22 +101,10 @@
         <operation>
             <search position="after" offset="4"><![CDATA[$json['success'] = $this->language->get('text_upload');]]></search>
             <add><![CDATA[protected function validate() {
-    	if ((utf8_strlen($this->request->post['quotename']) < 3) || (utf8_strlen($this->request->post['quotename']) > 50)) {
-      		$this->error['quotename'] = $this->language->get('error_quotename');
-    	}
-
-    	if ((utf8_strlen($this->request->post['contactnumber']) < 10) || (utf8_strlen($this->request->post['contactnumber']) > 15)) {
+    	if ((utf8_strlen($this->request->post['contactnumber']) < 3)) {
       		$this->error['contactnumber'] = $this->language->get('error_contactnumber');
     	}
 
-    	if (!preg_match('/^[^\@]+@.*\.[a-z]{2,6}$/i', $this->request->post['email'])) {
-      		$this->error['email'] = $this->language->get('error_email');
-    	}
-
-    	if ((utf8_strlen($this->request->post['details']) < 5) || (utf8_strlen($this->request->post['details']) > 3000)) {
-      		$this->error['details'] = $this->language->get('error_details');
-    	}
-		
 		if (!$this->error) {
 	  		return true;
 		} else {
@@ -215,16 +166,8 @@ $_['company_name']  = '%s';]]></add>
             <form action="<?php echo $action; ?>" enctype="multipart/form-data" method="post" name="quoteForm">
              <h2><?php echo $enquire_heading; ?></h2>
                     <table>
-                      <tr align="left">
-                        <td><?php echo $enquire_quotename; ?></td>
-                          <td><input type="text" name="quotename" /> 
-            <?php if ($error_quotename) { ?>
-                <span class="error"><?php echo $error_quotename; ?></span>
-              <?php } ?>
-            </td>
-                        </tr>
             <tr>
-            <td><?php echo $enquire_contactnumber; ?></td>
+            <td style="padding-right: 20px"><?php echo $enquire_contactnumber; ?></td>
             <td><input type="text" name="contactnumber" /> 
             <?php if ($error_contactnumber) { ?>
                 <span class="error"><?php echo $error_contactnumber; ?></span>
@@ -232,24 +175,8 @@ $_['company_name']  = '%s';]]></add>
             </td>
             </tr>
             <tr>
-            <td><?php echo $enquire_email; ?></td>
-            <td><input type="text" name="email" /> 
-            <?php if ($error_email) { ?>
-                <span class="error"><?php echo $error_email; ?></span>
-              <?php } ?> 
-            </td>
-            </tr>
-            <tr>
-            <td><?php echo $enquire_details; ?></td>
-            <td><textarea name="details"></textarea> 
-            <?php if ($error_details) { ?>
-                <span class="error"><?php echo $error_details; ?></span>
-              <?php } ?>
-            </td>
-            </tr>
-            <tr>
             <td></td>
-            <td><input type="submit" value="Submit Now"  id="button-enquire" class="button" /></td>
+            <td><input type="submit" value="Заказать в 1 клик"  id="button-enquire" class="button" /></td>
             </tr>
             </table>
             </form>
