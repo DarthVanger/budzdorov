@@ -27,6 +27,8 @@ $(document).ready(function() {
 	});
 	
 	/* Ajax Cart */
+    /* darthvanger@gmail.com, 2015-04-20: removed this, because it's not useful */
+    /*
 	$('#cart > .heading a').live('click', function() {
 		$('#cart').addClass('active');
 		
@@ -36,6 +38,7 @@ $(document).ready(function() {
 			$(this).removeClass('active');
 		});
 	});
+    */
 	
 	/* Mega Menu */
 	$('#menu ul > li > a + div').each(function(index, element) {
