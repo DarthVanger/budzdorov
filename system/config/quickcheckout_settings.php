@@ -500,7 +500,7 @@ $_['quickcheckout_settings'] = array('general' => array(
 										),
 										'shipping_method' => array(
 											'sort_order' => 4,
-											'column' => 2,
+											'column' => 1,
 											'row' => 1,
 											'display' => 1,
 										    'input_style' => 'radio',
@@ -526,7 +526,7 @@ $_['quickcheckout_settings'] = array('general' => array(
 										),
 										'cart' => array(
 											'sort_order' => 6,
-											'column' => 2,
+											'column' => 0,
 											'row' => 2,
 											'display_title' => 1,
 											'display_description' => 1,
@@ -810,11 +810,11 @@ $_['quickcheckout_settings'] = array('general' => array(
 																	 'require' => 1
 																	 ),
 												'lastname' => array(
-																	 'display' => 1, 
-																	 'require' => 1														
+																	 'display' => 0, 
+																	 'require' => 0														
 																	 ), 
-												'email' => array(	 'display' => 1, 
-																	 'require' => 1,
+												'email' => array(	 'display' => 0, 
+																	 'require' => 0,
 																	 'error' => array(0 => array('min_length' => 3, 
 																						 'max_length' => 96, 
 																						 'text' => array(1 => 'Sorry, but you need to have the length of the text more then 3 and less then 96 ')),
@@ -824,26 +824,26 @@ $_['quickcheckout_settings'] = array('general' => array(
 																						 'text' => 'error_email')),
 																	 ),
 												'heading' => array(
-																	 'display' => 1														
+																	 'display' => 0														
 																	 ),
 												'telephone' => array(
 																	 'display' => 1, 
-																	 'require' => 0
+																	 'require' => 1
 																	 ),
 												'fax' => array(
-																	 'display' => 1, 
+																	 'display' => 0, 
 																	 'require' => 0	
 																	 ),
 												'company' => array(
-																	 'display' => 1, 
+																	 'display' => 0, 
 																	 'require' => 0
 																	 ),
 												'company_id' => array(
-																	 'display' => 1, 
+																	 'display' => 0, 
 																	 'require' => 0
 																	 ),
 												'customer_group_id' => array(
-																	 'display' => 1, 
+																	 'display' => 0, 
 																	 'require' => 0
 																	 ),
 												'tax_id' => array(
@@ -859,29 +859,29 @@ $_['quickcheckout_settings'] = array('general' => array(
 																	 'require' => 0
 																	 ),
 												'city' => array(
-																	 'display' => 1, 
-																	 'require' => 1
+																	 'display' => 0, 
+																	 'require' => 0
 																	 ),
 												'postcode' => array(
-																	 'display' => 1, 
-																	 'require' => 1
+																	 'display' => 0, 
+																	 'require' => 0
 																	 ),
 												'country_id' => array(
-																	 'display' => 1, 
-																	 'require' => 1
+																	 'display' => 0, 
+																	 'require' => 0
 																	 ),
 												'zone_id' => array(
-																	 'display' => 1, 
-																	 'require' => 1
+																	 'display' => 0, 
+																	 'require' => 0
 																	 ),
 												'shipping' => array( 
-																	 'display' => 1,
+																	 'display' => 0,
 																	 'value' => 1
 																	 ),
 												'agree' => array( 
-																	 'display' => 1, 
+																	 'display' => 0, 
 																	 'require' => 0,
-																	 'value' => '0'
+																	 'value' => '1'
 																	 )
 											)
 										),
@@ -945,10 +945,10 @@ $_['quickcheckout_settings'] = array('general' => array(
 												  'description' => 'option_guest_cart_description',
 												  'option' => array(
 														'voucher' => array(
-																	'display' => 1
+																	'display' => 0
 														),
 														'coupon' => array(
-																	'display' => 1
+																	'display' => 0
 														),
 														'reward' => array(
 																	'display' => 1
