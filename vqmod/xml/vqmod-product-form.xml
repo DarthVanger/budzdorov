@@ -9,16 +9,10 @@
             <search position="after"><![CDATA[$this->data['button_continue'] = $this->language->get('button_continue');]]></search>
             <add><![CDATA[//product form
                             $this->data['button_enquire'] = $this->language->get('button_enquire');
-                            $this->data['enquire_heading'] = $this->language->get('enquire_heading');
-                            $this->data['enquire_quotename'] = $this->language->get('enquire_quotename');
-                            $this->data['enquire_contactnumber'] = $this->language->get('enquire_contactnumber');
-                            $this->data['enquire_details'] = $this->language->get('enquire_details');
-                            $this->data['enquire_email'] = $this->language->get('enquire_email');
+                            $this->data['enquire_heading'] = 'Заказать в 1 клик';
+                            $this->data['enquire_contactnumber'] = 'Ваш номер телефона';
 
-                            $this->data['error_email'] = $this->language->get('error_email'); 
-                            $this->data['error_quotename'] = $this->language->get('error_quotename');
-                            $this->data['error_contactnumber'] = $this->language->get('error_contactnumber');
-                            $this->data['error_details'] = $this->language->get('error_details');]]>
+                            $this->data['error_contactnumber'] = 'Введите свой номер телефона'; 
 			</add>
         </operation>
       
@@ -186,8 +180,7 @@ $_['text_contact']   = 'Contact Form';
 $_['text_address']   = 'Address:';
 $_['text_email']     = 'E-Mail:';
 $_['text_telephone'] = 'Telephone:';
-$_['text_fax']       = 'Fax:';
-$_['text_message']   = '<p>Your Message Has been Successfully Sent To Store Manager! Please check your email by the time for your message response. If you do not have any email address Please contact us using our chat Panel or our Provided contact number for product details. Thank You</p>';
+$_['text_message']   = '<p>Спасибо, Ваш заказ принят, ожидайте от нас звонка!</p>';
 
 // Email
 $_['email_subject']  = 'Enquiry %s';
@@ -217,12 +210,7 @@ $_['company_name']  = '%s';]]></add>
                     <table>
                       <tr align="left">
                         <td><?php echo $enquire_quotename; ?></td>
-                          <td><input type="text" name="quotename" /> 
-            <?php if ($error_quotename) { ?>
-                <span class="error"><?php echo $error_quotename; ?></span>
-              <?php } ?>
-            </td>
-                        </tr>
+                      </tr>
             <tr>
             <td><?php echo $enquire_contactnumber; ?></td>
             <td><input type="text" name="contactnumber" /> 
@@ -232,24 +220,8 @@ $_['company_name']  = '%s';]]></add>
             </td>
             </tr>
             <tr>
-            <td><?php echo $enquire_email; ?></td>
-            <td><input type="text" name="email" /> 
-            <?php if ($error_email) { ?>
-                <span class="error"><?php echo $error_email; ?></span>
-              <?php } ?> 
-            </td>
-            </tr>
-            <tr>
-            <td><?php echo $enquire_details; ?></td>
-            <td><textarea name="details"></textarea> 
-            <?php if ($error_details) { ?>
-                <span class="error"><?php echo $error_details; ?></span>
-              <?php } ?>
-            </td>
-            </tr>
-            <tr>
             <td></td>
-            <td><input type="submit" value="Submit Now"  id="button-enquire" class="button" /></td>
+            <td><input type="submit" value="Заказать"  id="button-enquire" class="button" /></td>
             </tr>
             </table>
             </form>

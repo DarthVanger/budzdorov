@@ -145,3 +145,5 @@
 2014-11-06 0:27:53 - PHP Warning:  session_start(): open(/var/lib/php5/sess_qcdlub2kc0l5hucrqqtk0jk5k6, O_RDWR) failed: Permission denied (13) in /var/www/opencart/system/library/session.php on line 12
 2014-11-06 0:28:11 - PHP Warning:  session_start(): open(/var/lib/php5/sess_qcdlub2kc0l5hucrqqtk0jk5k6, O_RDWR) failed: Permission denied (13) in /var/www/opencart/system/library/session.php on line 12
 2015-04-19 16:09:12 - PHP Notice:  Undefined variable: base in /var/www/vitalart/catalog/view/theme/nature/template/common/footer.tpl on line 11
+2015-04-19 16:16:48 - PHP Warning:  file_put_contents(/var/www/vitalart/vqmod/logs/0_Sun.log): failed to open stream: Permission denied in /var/www/vitalart/vqmod/vqmod.php on line 446
+2015-04-19 16:21:55 - PHP Warning:  file_put_contents(/var/www/vitalart/vqmod/logs/0_Sun.log): failed to open stream: Permission denied in /var/www/vitalart/vqmod/vqmod.php on line 446
