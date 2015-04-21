@@ -1,0 +1,9 @@
+#cart .heading .column {
+    display: inline-block;
+    vertical-align: top;
+}
+.header-cart-image {
+    height: 50px;
+    vertical-align: top;
+    margin-left: 20px;
+}

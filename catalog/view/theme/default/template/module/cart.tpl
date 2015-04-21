@@ -1,8 +1,14 @@
 <div id="cart" >
   <a href="<?php echo $checkout; ?>">
      <div class="heading">
-      <h4><?php echo $heading_title; ?></h4>
-      <span id="cart-total"><?php echo $text_items; ?></span>
+      <div class="column">
+          <img class="header-cart-image" src="/vitalart/image/header-cart-image.png" />
+      </div>
+      <div class="column">
+          <h4><?php echo $heading_title; ?></h4>
+          <span id="cart-total"><?php echo $text_items; ?></span>
+          <!-- darthvanger@gmail.com, 2015-04-21: adding the cart image -->
+      </div>
     </div>
   </a>
   <div class="content">
