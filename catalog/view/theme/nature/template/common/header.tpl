@@ -63,6 +63,7 @@ DD_belatedPNG.fix('#logo img');
       <div class="links">
         <a href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a>
         <a href="/delivery">Доставка</a>
+        <a href="/contact">Контакты</a>
       </div>
     </div>
 <div id="menu">
