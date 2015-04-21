@@ -7,7 +7,7 @@
 /admin/config.php
 
 # System Cache Files
-/system/cache/**
+/system/cache
 !/system/cache/index.html
 
 # vqmod cache
@@ -15,11 +15,11 @@ vqmod/vqcache
 vqmod/mods.cache
 
 # Image Cache Files
-/image/cache/*
+/image/cache
 !/image/cache/index.html
 
 # Log Files
-/system/logs/*
+/system/logs
 !/system/logs/index.html
 
 # Resources folder
