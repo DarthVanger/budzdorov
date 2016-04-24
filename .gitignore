@@ -19,8 +19,8 @@ vqmod/mods.cache
 !/image/cache/index.html
 
 # Log Files
-/system/logs
-!/system/logs/index.html
+system/logs
+!system/logs/index.html
 
 # Resources folder
 #/resources/**
