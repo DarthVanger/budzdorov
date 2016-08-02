@@ -46,24 +46,41 @@ DD_belatedPNG.fix('#logo img');
 <?php echo $google_analytics; ?>
 </head>
 <body>
+
+<!-- - - - - - - - - - -  - - - -  -
+  - darthvanger@gmail.com, 2016-08-01:
+  - Notification about vacation, uncomment when needed :)
+-->
+<div class="vacation-notification-background">
+<!--
+    <div class="vacation-background-overlay">
+    </div>
+    -->
+    <div class="vacation-background-image vacation-image-sun">
+    </div>
+    <!--
+    <div class="vacation-background-image vacation-image-sun-2">
+    </div>
+    <div class="vacation-background-image vacation-image-bird">
+    </div>
+    -->
+</div>
+
+<div class="vacation-notification-text">
+    <big class="text">Магазин в отпуске с 03.08.2016 по 24.08.2016</big>
+    <p class="vacation-footer">
+        <small class="text">Заходите в другой раз :)</small>
+    </p>
+</div>
+
+<?php if ($logo) { ?>
+<div id="logo"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></div>
+<?php } ?>
+
 <div id="header">
 
-   <!-- - - - - - - - - - -  - - - -  -
-      - darthvanger@gmail.com, 2016-08-01:
-      - Notification about vacation, uncomment when needed :)
-    -->
-    <div class="vacation-notification">
-        <big>Магазин в отпуске с 03.08.2016 по 24.08.2016</big>
-        <p>
-            <small>Заходите в другой раз :)</small>
-        </p>
-    </div>
 
 
-
-  <?php if ($logo) { ?>
-  <div id="logo"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></div>
-  <?php } ?>
   <?php echo $language; ?>
   <?php echo $currency; ?>
   <?php echo $cart; ?>

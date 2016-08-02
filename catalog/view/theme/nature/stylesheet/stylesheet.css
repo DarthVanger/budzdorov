@@ -110,8 +110,10 @@ label {
 	position: relative;
 	z-index: 99;
 }
-#header #logo {
+#logo {
 	position: absolute;
+    /* make it above the .vacation-notification */
+    z-index: 90;
 	margin:0;
 	top: 50px;
 	left: 260px;
