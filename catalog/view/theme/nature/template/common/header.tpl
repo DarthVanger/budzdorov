@@ -50,20 +50,11 @@ DD_belatedPNG.fix('#logo img');
 <!-- - - - - - - - - - -  - - - -  -
   - darthvanger@gmail.com, 2016-08-01:
   - Notification about vacation, uncomment when needed :)
+  - Covers header with big text, hiding cart and order buttons.
 -->
 <div class="vacation-notification-background">
-<!--
-    <div class="vacation-background-overlay">
-    </div>
-    -->
     <div class="vacation-background-image vacation-image-sun">
     </div>
-    <!--
-    <div class="vacation-background-image vacation-image-sun-2">
-    </div>
-    <div class="vacation-background-image vacation-image-bird">
-    </div>
-    -->
 </div>
 
 <div class="vacation-notification-text">
@@ -73,17 +64,17 @@ DD_belatedPNG.fix('#logo img');
     </p>
 </div>
 
+<!-- logo: a flying tree :) -->
 <?php if ($logo) { ?>
 <div id="logo"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></div>
 <?php } ?>
 
+
 <div id="header">
-
-
-
   <?php echo $language; ?>
   <?php echo $currency; ?>
   <?php echo $cart; ?>
+
   <!-- darthvanger@gmail.com, 2015-04-19: do we need search? -->
   <!--
   <div id="search">
