@@ -3,6 +3,7 @@
 @import url("category.css");
 @import url("product/manufacturer.css");
 @import url("header-cart.css");
+@import url("vacation-notification.css");
 html {
 	overflow: -moz-scrollbars-vertical;
 	margin: 0;

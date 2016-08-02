@@ -1,0 +1,17 @@
+.vacation-notification {
+    position: absolute;
+    /* make it above the fucking cart :) */
+    z-index: 10;
+
+    width: 100%;
+    top: 0;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    line-height: 2em;
+    padding: 3.5em 0 2.5em 0;
+}
+
+.vacation-footer {
+}

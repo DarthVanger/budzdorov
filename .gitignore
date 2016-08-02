@@ -24,3 +24,6 @@ system/logs
 
 # Resources folder
 #/resources/**
+
+# frontend libs
+bower_components/

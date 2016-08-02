@@ -1,0 +1,21 @@
+{
+  "name": "vitalart",
+  "version": "0.0.0",
+  "homepage": "https://github.com/DarthVanger/budzdorov",
+  "authors": [
+    "Darth Vanger <darthvanger@gmail.com>"
+  ],
+  "description": "opencart based e-shop",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery.countdown": "~2.1.0"
+  }
+}
