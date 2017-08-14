@@ -52,19 +52,17 @@ DD_belatedPNG.fix('#logo img');
   - Notification about vacation, uncomment when needed :)
   - Covers header with big text, hiding cart and order buttons.
 -->
-<!--
 <div class="vacation-notification-background">
     <div class="vacation-background-image vacation-image-sun">
     </div>
 </div>
 
 <div class="vacation-notification-text">
-    <big class="text">Магазин в отпуске с 03.08.2016 по 27.08.2016</big>
+    <big class="text">Магазин в отпуске с 10.08.2017 по 27.08.2017</big>
     <p class="vacation-footer">
-        <small class="text">Вы можете смотреть каталог и цены, но заказы принимаются только после 27.08.2016</small>
+        <small class="text">Вы можете смотреть каталог и цены, но заказы принимаются только после 27.08.2017</small>
     </p>
 </div>
--->
 
 <!-- logo: a flying tree :) -->
 <?php if ($logo) { ?>
