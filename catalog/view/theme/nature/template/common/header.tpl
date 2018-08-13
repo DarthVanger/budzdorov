@@ -58,9 +58,9 @@ DD_belatedPNG.fix('#logo img');
 </div>
 
 <div class="vacation-notification-text">
-    <big class="text">Магазин в отпуске с 10.08.2017 по 27.08.2017</big>
+    <big class="text">Магазин в отпуске до 24.08.2018</big>
     <p class="vacation-footer">
-        <small class="text">Вы можете смотреть каталог и цены, но заказы принимаются только после 27.08.2017</small>
+        <small class="text">Вы можете смотреть каталог и цены, но заказы принимаются только после 24.08.2018</small>
     </p>
 </div>
 
