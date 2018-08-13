@@ -10,3 +10,12 @@ git config git-ftp.syncroot .
 git ftp show
 git ftp push --dry-run
 ```
+# How to
+## Show/hide vacation header overlay
+```
+vim catalog/view/theme/nature/template/common/header.tpl
+```
+ - Search for "vacation"
+ - Uncomment, update dates
+ - Commit
+ - `git ftp push --dry-run`

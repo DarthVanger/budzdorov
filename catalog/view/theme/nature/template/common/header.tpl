@@ -64,6 +64,8 @@ DD_belatedPNG.fix('#logo img');
     </p>
 </div>
 
+<!-- end vacation header overlay -->
+
 <!-- logo: a flying tree :) -->
 <?php if ($logo) { ?>
 <div id="logo"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></div>
