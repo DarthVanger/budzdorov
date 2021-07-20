@@ -42,7 +42,7 @@
 OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
 Please donate via PayPal to donate@opencart.com
 //-->
-<div id="powered"><?php echo $powered; ?> | design: <a href="http://www.dswww.pl">Design Studio WWW - Tworzenie Stron WWW</a></div>
+<div id="powered" style="font-size: 16px">ВиталАрт © 2014-2021</div>
 <!-- 
 OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
 Please donate via PayPal to donate@opencart.com
